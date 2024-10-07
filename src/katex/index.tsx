@@ -10,3 +10,9 @@ export const webpackModules: Record<string, ExtensionWebpackModule> = {
     // separate file. See `src/katex/webpackModules/entrypoint.ts`.
   }
 };
+
+import packJson from '../../package.json';
+
+export const styles: string[] = [
+  `@import url("https://cdn.jsdelivr.net/npm/katex@${packJson.dependencies.katex}/dist/katex.min.css");`
+];
