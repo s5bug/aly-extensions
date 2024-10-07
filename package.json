@@ -1,5 +1,5 @@
 {
-  "name": "sample-extension",
+  "name": "aly-extensions",
   "version": "1.0.0",
   "scripts": {
     "build": "node build.mjs",
@@ -8,10 +8,12 @@
   },
   "devDependencies": {
     "@electron/asar": "^3.2.8",
+    "@types/katex": "^0.16.7",
     "esbuild": "^0.19.3",
     "esbuild-copy-static-files": "^0.1.0"
   },
   "dependencies": {
-    "@moonlight-mod/types": "^1.2.0"
+    "@moonlight-mod/types": "^1.2.0",
+    "katex": "^0.16.11"
   }
 }

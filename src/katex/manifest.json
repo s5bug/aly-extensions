@@ -1,0 +1,15 @@
+{
+  "id": "katex",
+  "version": "1.0.0",
+  "apiLevel": 2,
+  "meta": {
+    "name": "KaTeX",
+    "tagline": "KaTeX support for Discord",
+    "description": "Wrap inline math with `\\\\(` and `\\\\)`, or block math with `\\\\[` and `\\\\]`, and it will render with \\\\(\\KaTeX\\\\)",
+    "authors": ["Aly"],
+    "source": "https://github.com/s5bug/aly-extensions"
+  },
+  "dependencies": [
+    "markdown"
+  ]
+}
