@@ -5,7 +5,7 @@
   "meta": {
     "name": "Ruby",
     "tagline": "Ruby (Furigana) support for Discord",
-    "description": "Wrap your base text in `{{}}`, and ruby text with `()`, to render with Ruby. Example: {{猫(ねこ)}}を{{拾(ひろ)う}} `{{猫(ねこ)}}を{{拾(ひろ)う}}`",
+    "description": "Wrap your base text in `{{}}`, and ruby text with `()`, to render with Ruby.\n\n`{{猫(ねこ)}}を{{拾(ひろ)う}}` → {{猫(ねこ)}}を{{拾(ひろ)う}}\n`{{我(wǒ)讲(jiǎng)日(rì)语(yǔ)}}` → {{我(wǒ)讲(jiǎng)日(rì)语(yǔ)}}",
     "authors": ["Aly"],
     "source": "https://github.com/s5bug/aly-extensions"
   },
