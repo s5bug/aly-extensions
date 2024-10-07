@@ -33,9 +33,9 @@ const inlineMarkdownMatch: MatchFunction = ((regex) => {
 })(inlineRegex)
 
 const inlineMarkdownParse: ParseFunction = (capture, nestedParse, state) => {
-  const katexCode = capture[1]
   return {
-    katexCode: katexCode
+    content: capture[0],
+    katexCode: capture[1]
   }
 }
 
@@ -71,9 +71,9 @@ const blockMarkdownMatch: MatchFunction = ((regex) => {
 })(blockRegex)
 
 const blockMarkdownParse: ParseFunction = (capture, nestedParse, state) => {
-  const katexCode = capture[1]
   return {
-    katexCode: katexCode
+    content: capture[0],
+    katexCode: capture[1]
   }
 }
 
