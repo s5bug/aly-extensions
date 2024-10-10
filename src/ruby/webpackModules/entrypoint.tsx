@@ -66,7 +66,7 @@ const rubyRenderer: SingleNodeOutput<React.ReactNode> = ({ rubyGroups, leftovers
   return <ruby>{groupElems}{leftoverElems}</ruby>
 }
 
-const rubyRule = (rules: Record<string, MarkdownRule>): MarkdownRule => {
+const rubyMarkdownRule = (rules: Record<string, MarkdownRule>): MarkdownRule => {
   const order = rules.spoiler.order
   const match = rubySegmentMatch
   const parse = rubySegmentParse
@@ -79,6 +79,6 @@ const rubySlateRule = (rules: Record<string, SlateRule>): SlateRule => {
 
 markdown.addRule(
   "ruby",
-  rubyRule,
+  rubyMarkdownRule,
   rubySlateRule
 )

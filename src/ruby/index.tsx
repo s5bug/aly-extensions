@@ -7,6 +7,6 @@ export const webpackModules: Record<string, ExtensionWebpackModule> = {
     ],
     entrypoint: true
     // There is no `run` specified here, as this Webpack module is stored in a
-    // separate file. See `src/katex/webpackModules/entrypoint.ts`.
+    // separate file. See `src/ruby/webpackModules/entrypoint.ts`.
   }
 };

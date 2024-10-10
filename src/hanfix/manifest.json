@@ -1,0 +1,29 @@
+{
+  "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
+  "id": "hanfix",
+  "version": "1.0.0",
+  "apiLevel": 2,
+  "meta": {
+    "name": "Han Fix",
+    "tagline": "Best-guess attaches language information to text that uses Hanzhi/Kanji/Hanja",
+    "authors": ["Aly"],
+    "source": "https://github.com/s5bug/aly-extensions"
+  },
+  "dependencies": [
+    "markdown"
+  ],
+  "settings": {
+    "preferredLocale": {
+      "displayName": "Preferred Locale",
+      "description": "Locale to default to when hard to deduce",
+      "type": "select",
+      "options": [
+        "ja-JP",
+        "zh-CN",
+        "zh-TW",
+        "ko-KR"
+      ],
+      "default": "ja-JP"
+    }
+  }
+}
