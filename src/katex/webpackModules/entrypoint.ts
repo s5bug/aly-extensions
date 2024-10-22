@@ -22,7 +22,7 @@ const KaTeXElement = (props: { katexCode: string, displayMode: boolean }) => {
   })
 }
 
-const inlineRegex = /^\\\\\(((?:[^\\]+|\\[^\\]|\\\\[^)])*)\\\\\)/
+const inlineRegex = /^\\\\\(((?:[^\\]|\\[^\\]|\\\\[^)])*)\\\\\)/
 
 const inlineMarkdownMatch: MatchFunction = ((regex) => {
   const f: MatchFunction = (source, state, prevCapture) => {
@@ -60,7 +60,7 @@ markdown.addRule(
   inlineSlateRule
 )
 
-const blockRegex = /^\\\\\[((?:[^\\]+|\\[^\\]|\\\\[^\]])*)\\\\]/
+const blockRegex = /^\\\\\[((?:[^\\]|\\[^\\]|\\\\[^\]])*)\\\\]/
 
 const blockMarkdownMatch: MatchFunction = ((regex) => {
   const f: MatchFunction = (source, state, prevCapture) => {
