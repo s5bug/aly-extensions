@@ -13,7 +13,10 @@ const KaTeXElement = (props: { katexCode: string, displayMode: boolean }) => {
   const container = React.useRef<HTMLElement>()
 
   React.useEffect(() => {
-    katex.render(props.katexCode, container.current!, { displayMode: props.displayMode })
+    katex.render(props.katexCode, container.current!, {
+      displayMode: props.displayMode,
+      throwOnError: false
+    })
   }, [props.katexCode, props.displayMode])
 
   return React.createElement(props.displayMode ? 'div' : 'span', {
