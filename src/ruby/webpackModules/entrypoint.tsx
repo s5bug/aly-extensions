@@ -5,7 +5,7 @@ import {
   SingleASTNode,
   SingleNodeOutput,
   SlateRule
-} from "@moonlight-mod/types/src/coreExtensions/markdown";
+} from "@moonlight-mod/types/coreExtensions/markdown";
 import * as markdown from "@moonlight-mod/wp/markdown_markdown";
 import React from "@moonlight-mod/wp/react";
 

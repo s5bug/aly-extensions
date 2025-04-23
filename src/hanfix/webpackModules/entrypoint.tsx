@@ -1,11 +1,14 @@
 import {
+  Capture,
   MarkdownRule,
   MatchFunction,
   ParseFunction,
+  Parser,
   SingleASTNode,
   SingleNodeOutput,
-  SlateRule
-} from "@moonlight-mod/types/src/coreExtensions/markdown";
+  SlateRule,
+  State
+} from "@moonlight-mod/types/coreExtensions/markdown";
 import * as markdown from "@moonlight-mod/wp/markdown_markdown";
 import React from "@moonlight-mod/wp/react";
 
@@ -40,7 +43,7 @@ type CjkAstNode = {
 const cjkRegex = /^(?:\p{sc=Han}|\p{sc=Katakana}|\p{sc=Hiragana}|\p{sc=Hangul}|[、，。])+/u
 
 const cjkSegmentMatch: MatchFunction = ((regex) => {
-  const f: MatchFunction = (source, state, prevCapture) => {
+  const f: MatchFunction = (source: string, state: State, prevCapture: string) => {
     if(state.__moonlight_hanfix_incjk) return null;
     return regex.exec(source)
   }
@@ -180,7 +183,7 @@ const mergeCjkGroups = (mergedGroups: CjkAstNodeUnparsedPart[], rawGroups: CjkAs
   }
 }
 
-const cjkSegmentParse: ParseFunction = (capture, nestedParse, state): CjkAstNode => {
+const cjkSegmentParse: ParseFunction = (capture: Capture, nestedParse: Parser, state: State): CjkAstNode => {
   const content = capture[0]
 
   let rawGroups: CjkAstNodeUnmergedPart[] = []
