@@ -10,5 +10,5 @@
     "jsx": "react",
     "resolveJsonModule": true
   },
-  "include": ["./src/**/*", "./env.d.ts"]
+  "include": ["./build.ts", "./repo.ts", "./src/**/*", "./env.d.ts"]
 }

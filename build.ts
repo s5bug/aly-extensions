@@ -2,7 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { watchExt, buildExt } from "@moonlight-mod/esbuild-config";
 
-const esm = [];
+const esm: string[] = [];
 
 const watch = process.argv.includes("--watch");
 const clean = process.argv.includes("--clean");
@@ -22,8 +22,10 @@ if (clean) {
     };
 
     if (watch) {
+      // @ts-expect-error src and dest are deprecated
       await watchExt(cfg);
     } else {
+      // @ts-expect-error src and dest are deprecated
       await buildExt(cfg);
     }
   }
