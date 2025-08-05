@@ -24,7 +24,7 @@ type RubyASTNode = {
 // base(ruby)base(ruby)leftover
 // parentheses are forbidden in base or ruby text (even if paren counting was
 // involved, should the inner or outer parens be the ruby?)
-const externalRegex = /^\{\{((?:(?:}?[^}()])+\((?:}?[^}()])+\))*)((?:}?[^}()])*)}}/
+const externalRegex = /^\{\{((?:(?:}?[^}()])+\((?:}?[^}()])+\))+)((?:}?[^}()])*)}}/
 
 const rubySegmentMatch: MatchFunction = ((regex) => {
   const f: MatchFunction = (source, state, prevCapture) => {
