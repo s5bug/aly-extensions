@@ -1,6 +1,6 @@
 {
   "id": "ruby",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "apiLevel": 2,
   "meta": {
     "name": "Ruby",
@@ -9,7 +9,5 @@
     "authors": ["Aly"],
     "source": "https://github.com/s5bug/aly-extensions"
   },
-  "dependencies": [
-    "markdown"
-  ]
+  "dependencies": ["markdown"]
 }

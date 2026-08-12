@@ -3,29 +3,27 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "node build.ts",
+    "build": "pnpm run check && node build.ts",
     "dev": "node build.ts --watch",
     "clean": "node build.ts --clean",
     "repo": "node repo.ts",
-    "lint": "eslint build.ts repo.ts src",
-    "lint:fix": "eslint build.ts repo.ts src --fix",
-    "lint:report": "eslint --output-file eslint_report.json --format json build.ts repo.ts src",
+    "lint": "biome check",
+    "lint:fix": "biome check --write",
     "typecheck": "tsc --noEmit",
     "check": "pnpm run lint && pnpm run typecheck"
   },
   "devDependencies": {
-    "@electron/asar": "^4.0.1",
-    "@moonlight-mod/esbuild-config": "^1.0.0",
+    "@biomejs/biome": "2.5.8",
+    "@electron/asar": "^4.2.1",
+    "@moonlight-mod/esbuild-config": "^1.1.0",
     "@moonlight-mod/eslint-config": "github:moonlight-mod/eslint-config",
-    "@types/katex": "^0.16.7",
-    "@types/node": "^24.2.0",
-    "esbuild": "^0.25.8",
-    "eslint": "^9.32.0",
-    "prettier": "^3.6.2",
-    "typescript": "^5.9.2"
+    "@types/katex": "^0.16.8",
+    "@types/node": "^26.2.0",
+    "esbuild": "^0.28.2",
+    "typescript": "^6.0.3"
   },
   "dependencies": {
-    "@moonlight-mod/types": "^1.3.25",
-    "katex": "^0.16.22"
+    "@moonlight-mod/types": "^2026.7.0",
+    "katex": "^0.18.4"
   }
 }

@@ -9,20 +9,13 @@
     "authors": ["Aly"],
     "source": "https://github.com/s5bug/aly-extensions"
   },
-  "dependencies": [
-    "markdown"
-  ],
+  "dependencies": ["markdown"],
   "settings": {
     "preferredLocale": {
       "displayName": "Preferred Locale",
       "description": "Locale to default to when hard to deduce",
       "type": "select",
-      "options": [
-        "ja-JP",
-        "zh-CN",
-        "zh-TW",
-        "ko-KR"
-      ],
+      "options": ["ja-JP", "zh-CN", "zh-TW", "ko-KR"],
       "default": "ja-JP"
     }
   }
