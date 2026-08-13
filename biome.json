@@ -6,7 +6,7 @@
     "useIgnoreFile": true
   },
   "files": {
-    "includes": ["**", "!!src/hanfix/kanjidic2-all-3.5.0.json"]
+    "includes": ["**", "!!src/hanfix/kanjidic2-all-3.6.2.json"]
   },
   "formatter": {
     "enabled": true,

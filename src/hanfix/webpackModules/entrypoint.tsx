@@ -238,6 +238,43 @@ const cjkRenderer: SingleNodeOutput<React.ReactNode> = (
 }
 
 const cjkMarkdownRule = (rules: Record<string, MarkdownRule>): MarkdownRule => {
+  const textRule = rules.text as MarkdownRule & {
+    __moonlight_hanfix_patched?: boolean
+  }
+  if (!textRule.__moonlight_hanfix_patched) {
+    const originalMatch = textRule.match
+
+    // match the start of cjk anywhere in the text
+    const unanchoredCjkRegex = new RegExp(
+      // cut off the starting `^`
+      cjkRegex.source.slice(1),
+      cjkRegex.flags,
+    )
+
+    const newMatch: MatchFunction = (source, state, prevCapture) => {
+      const innerText = originalMatch(source, state, prevCapture)
+
+      // if we're in text, but NOT in CJK text
+      if (innerText && !state.__moonlight_hanfix_incjk) {
+        // find the start of CJK text
+        const cjkIndex = innerText[0].search(unanchoredCjkRegex)
+
+        if (cjkIndex > 0) {
+          // if we found CJK, cut off the text rule before it
+          innerText[0] = innerText[0].substring(0, cjkIndex)
+        } else if (cjkIndex === 0) {
+          // if the whole text is CJK, then we shouldn't use the text rule at all
+          return null
+        }
+      }
+
+      return innerText
+    }
+
+    textRule.__moonlight_hanfix_patched = true
+    textRule.match = newMatch
+  }
+
   const order = rules.text.order - 0.5
   const match = cjkSegmentMatch
   const parse = cjkSegmentParse

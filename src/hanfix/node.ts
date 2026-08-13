@@ -31,7 +31,7 @@ for (const line of lines) {
 export const traditionalToSimplified = Object.freeze(t2s)
 export const simplifiedToTraditional = Object.freeze(s2t)
 
-import kanjidicJsonUntyped from './kanjidic2-all-3.5.0.json'
+import kanjidicJsonUntyped from './kanjidic2-all-3.6.2.json'
 
 type CodepointEntry = { type: string; value: string }
 type KanjidicCharacter = { codepoints: CodepointEntry[] }
