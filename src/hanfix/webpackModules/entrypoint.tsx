@@ -231,7 +231,9 @@ const cjkRenderer: SingleNodeOutput<React.ReactNode> = (
   state,
 ) => {
   const subpart = (p: CjkAstNodePart) => (
-    <span lang={p.locale}>{p.content.map((v) => nestedOutput(v, state))}</span>
+    <span className="moonlight-hanfix" lang={p.locale}>
+      {p.content.map((v) => nestedOutput(v, state))}
+    </span>
   )
 
   return parts.map((p: CjkAstNodePart) => subpart(p))
