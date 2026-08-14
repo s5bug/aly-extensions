@@ -1,3 +1,4 @@
+import * as data from 'hanfix:data'
 import type {
   Capture,
   MarkdownRule,
@@ -11,12 +12,6 @@ import type {
 } from '@moonlight-mod/types/coreExtensions/markdown'
 import * as markdown from '@moonlight-mod/wp/markdown_markdown'
 import React from '@moonlight-mod/wp/react'
-
-const natives: {
-  traditionalToSimplified: Readonly<Record<number, number>>
-  simplifiedToTraditional: Readonly<Record<number, number>>
-  kanjidic: Readonly<Record<number, undefined>>
-} = moonlight.getNatives('hanfix')
 
 type CjkLocale = 'ja-JP' | 'zh-CN' | 'zh-TW' | 'ko-KR'
 
@@ -69,13 +64,13 @@ const allCodepoints = (
 }
 
 const allInKanjidic = (search: string): boolean =>
-  allCodepoints(search, (c) => c in natives.kanjidic)
+  allCodepoints(search, (c) => c in data.kanjidic)
 
 const allCantBeMoreTraditional = (search: string): boolean =>
-  allCodepoints(search, (c) => !(c in natives.simplifiedToTraditional))
+  allCodepoints(search, (c) => !(c in data.simplifiedToTraditional))
 
 const allCantBeMoreSimplified = (search: string): boolean =>
-  allCodepoints(search, (c) => !(c in natives.traditionalToSimplified))
+  allCodepoints(search, (c) => !(c in data.traditionalToSimplified))
 
 const alternativeRegex =
   /(?<zh>(\p{sc=Han}|[，。])+)|(?<ja>(?:\p{sc=Katakana}|\p{sc=Hiragana}|、)+)|(?<ko>\p{sc=Hangul}+)/uy
