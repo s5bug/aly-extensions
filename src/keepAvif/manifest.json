@@ -1,0 +1,12 @@
+{
+  "$schema": "https://moonlight-mod.github.io/manifest.schema.json",
+  "id": "keepAvif",
+  "version": "1.0.0",
+  "apiLevel": 2,
+  "meta": {
+    "name": "Keep AVIF",
+    "tagline": "Prevent the Discord client from requesting (lower-quality, slower-loading) WebP versions of AVIFs from the media proxy",
+    "authors": ["Aly"],
+    "source": "https://github.com/s5bug/aly-extensions"
+  }
+}
